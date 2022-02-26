@@ -12,7 +12,7 @@ print("DATASET SCIKIT LEARN")
 print("1 Iris")
 print("2 Wine")
 print("3 Breast Cancer")
-print(" Program ini juga bisa menerima file csv, untuk melakukan ini masukkan csv ke folder target")
+print("Program ini juga bisa menerima file CSV, untuk melakukan ini masukkan CSV ke folder test, pastikan semua value dalam csv merupakan nomor")
 print("4. CSV sendiri (ada target)")
 print("5. CSV sendiri (tidak ada target)")
 print("===============================================")
@@ -34,12 +34,12 @@ elif (cc == 3) :
     df['Target'] = pd.DataFrame(data.target)
     hastarget = True
 elif (cc == 4) :
-    data = input("Nama file csv (c/: heart.csv) = ")
-    file = ".\\target\\" + data
+    data = input("Nama file csv = ")
+    file = ".\\test\\" + data
     while not path.exists(file) :
         print("File tidak dapat ditemukan")
-        data = input("Nama file csv (c/: heart.csv) = ")
-        file = ".\\target\\" + data
+        data = input("Nama file csv  = ")
+        file = ".\\test\\" + data
     df = pd.read_csv(file)
     if ('target') in df :
         hastarget = True
@@ -47,12 +47,12 @@ elif (cc == 4) :
         print("CSV TIDAK ADA TARGET ! pilih 5 untuk csv tanpa target")
 elif (cc == 5) :
     hastarget = False
-    data = input("Nama file csv (c/: heart.csv) = ")
-    file = ".\\target\\" + data
+    data = input("Nama file csv = ")
+    file = ".\\test\\" + data
     while not path.exists(file) :
         print("File tidak dapat ditemukan")
-        data = input("Nama file csv (c/: heart.csv) = ")
-        file = ".\\target\\" + data
+        data = input("Nama file csv  = ")
+        file = ".\\test\\" + data
     df = pd.read_csv(file)
 df.head()
 
