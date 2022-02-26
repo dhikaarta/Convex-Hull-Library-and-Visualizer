@@ -54,9 +54,9 @@ def aboveOrBelow(p1,p2,array) :
     grad = (p2[1] - p1[1]) / (p2[0] - p1[0])
     c = p1[1] - (grad * p1[0])
     for points in array :
-        if points[1] < grad * (points[0]) + c :
+        if points[1] <= grad * (points[0]) + c :
             s2.append(points) 
-        if points[1] > grad * (points[0]) + c :
+        if points[1] >= grad * (points[0]) + c :
             s1.append(points) 
         
     return s1,s2
