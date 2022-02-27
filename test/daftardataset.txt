@@ -1,0 +1,7 @@
+DAFTAR DATASET YANG DIGUNAKAN :
+1. Iris Dataset (From Scikit-Learn module)
+2. Breast-Cancer Dataset (From Scikit-Learn module)
+3. Wine Dataset (From Scikit-Learn module)
+4. banknote.csv
+5. heart.csv
+6. indiansdiabetes.csv

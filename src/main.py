@@ -41,7 +41,7 @@ elif (cc == 4) :
         data = input("Nama file csv  = ")
         file = ".\\test\\" + data
     df = pd.read_csv(file)
-    if ('target') in df :
+    if ('target') in df or ('Target') in df or ('TARGET') in df :
         hastarget = True
     if (hastarget == False) :
         print("CSV TIDAK ADA TARGET ! pilih 5 untuk csv tanpa target")
@@ -79,8 +79,10 @@ if(hastarget) :
             Y = int(input("Kolom Yang menjadi Y : "))
         ## 4. INISIALISASI PYPLOT
         plt.figure(figsize = (10, 6))
-        colors = ['b','r','g']
         plt.title(label='ConveX Hull', fontsize=20)
+        xname = col[X-1]
+        yname = col[Y-1]
+        plt.title(f'{xname} vs {yname}')
         plt.xlabel(col[X-1])
         plt.ylabel(col[Y-1])
         target = df.target.unique()
@@ -113,7 +115,6 @@ if(hastarget) :
         while (Y <= 0 or Y >= len(col)) :
             Y = int(input("Kolom Yang menjadi Y : "))
         plt.figure(figsize = (10, 6))
-        colors = ['b','r','g']
         xname = data.feature_names[X-1]
         yname = data.feature_names[Y-1]
         plt.title(f'{xname} vs {yname}')
@@ -131,7 +132,7 @@ if(hastarget) :
             plt.plot(x, y, '-o')
     plt.legend()
     plt.show()
-else :
+elif(hastarget == False and cc == 5) :
     print("===========================================================")
     print("Kolom - kolom pada dataset :")
     col = df.columns.values.tolist()
@@ -151,7 +152,6 @@ else :
         Y = int(input("Kolom Yang menjadi Y : "))
     ## 4. INISIALISASI PYPLOT
     plt.figure(figsize = (10, 6))
-    colors = ['b','r','g']
     plt.title(label='ConveX Hull', fontsize=20)
     plt.xlabel(col[X-1])
     plt.ylabel(col[Y-1])
